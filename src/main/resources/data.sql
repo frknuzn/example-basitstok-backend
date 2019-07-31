@@ -1,0 +1,2 @@
+insert into users (id,uname,pwd,name_surname,email) values (1000,'frknuzn','34furkan34','Furkan UZUN','frknuzn34@hotmail.com');
+insert into users (id,uname,pwd,name_surname,email) values (1001,'dnzuzn','34deniz34','Deniz UZUN','deniz@uzun.com');
