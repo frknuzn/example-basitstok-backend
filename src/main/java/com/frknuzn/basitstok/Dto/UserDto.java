@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @ApiModel(value = "User Data Transfer Object")
 public class UserDto {
+
     @ApiModelProperty(required = true,value = "ID")
     private Long id;
     @ApiModelProperty(required = false,value = "Name Surname")

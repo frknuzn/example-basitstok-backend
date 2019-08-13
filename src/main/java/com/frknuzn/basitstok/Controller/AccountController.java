@@ -38,7 +38,7 @@ public class AccountController {
         final User user = userRepository.findByUserName(request.getUsername());
         final String token = jwtTokenUtil.generateToken(user);
         final Date tokenTime=jwtTokenUtil.getExpirationDateFromToken(token);
-        return ResponseEntity.ok(new TokenResponse(user.getUserName(), token,tokenTime.getTime()));
+        return ResponseEntity.ok(new TokenResponse(user.getUserName(), user.getId(),token,tokenTime.getTime()));
     }
 
     //Kayıt ol

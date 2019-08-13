@@ -15,6 +15,7 @@ import java.util.Date;
 public class TokenResponse {
 
     private String username;
+    private long userId;
     private String token;
     private long tokenTime;
 }
