@@ -1,5 +1,6 @@
 package com.frknuzn.basitstok.Service.Impl;
 
+import com.frknuzn.basitstok.Dto.ProductDetailByUserDto;
 import com.frknuzn.basitstok.Dto.ProductDto;
 import com.frknuzn.basitstok.Entity.Product;
 import com.frknuzn.basitstok.Repository.ProductRepository;
@@ -47,14 +48,15 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<ProductDto> getProductsByUserId(Long id) {
+    public List<ProductDetailByUserDto> getProductsByUserId(Long id) {
         List<Product> products=_productRepository.findProductByUserId(id);
-        return Arrays.asList(_modelMapper.map(products,ProductDto[].class));
+        return Arrays.asList(_modelMapper.map(products,ProductDetailByUserDto[].class));
     }
 
     @Override
     public Boolean delete(Long productId) {
-        return null;
+        _productRepository.deleteById(productId);
+        return true;
     }
 
     @Override

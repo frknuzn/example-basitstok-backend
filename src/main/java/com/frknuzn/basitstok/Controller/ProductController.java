@@ -1,5 +1,6 @@
 package com.frknuzn.basitstok.Controller;
 
+import com.frknuzn.basitstok.Dto.ProductDetailByUserDto;
 import com.frknuzn.basitstok.Dto.ProductDto;
 import com.frknuzn.basitstok.Service.Impl.ProductServiceImpl;
 import com.frknuzn.basitstok.Util.ApiPaths;
@@ -34,10 +35,16 @@ public class ProductController {
 
     @GetMapping(value = "/{id}")
     @ApiOperation(value = "Get Product By UserId",response = ProductDto.class)
-    public ResponseEntity<List<ProductDto>> getProductsByUserId(@PathVariable(value = "id",required = true)Long userId){
+    public ResponseEntity<List<ProductDetailByUserDto>> getProductsByUserId(@PathVariable(value = "id",required = true)Long userId){
 
-        List<ProductDto> productDto=_productService.getProductsByUserId(userId);
+        List<ProductDetailByUserDto> productDto=_productService.getProductsByUserId(userId);
         return ResponseEntity.ok(productDto);
 
+    }
+
+    @DeleteMapping(value = "/{id}")
+    @ApiOperation(value = "Delete Product By Id",response = ProductDto.class)
+    public ResponseEntity<Boolean>deleteProduct(@PathVariable(value = "id",required = true)Long id){
+        return ResponseEntity.ok(_productService.delete(id));
     }
 }

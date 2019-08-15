@@ -1,5 +1,6 @@
 package com.frknuzn.basitstok.Service;
 
+import com.frknuzn.basitstok.Dto.ProductDetailByUserDto;
 import com.frknuzn.basitstok.Dto.ProductDto;
 
 import java.util.List;
@@ -10,7 +11,7 @@ public interface ProductService {
 
     ProductDto getById(Long id);
 
-    List<ProductDto> getProductsByUserId(Long id);
+    List<ProductDetailByUserDto> getProductsByUserId(Long id);
 
     Boolean delete(Long productId);
 
