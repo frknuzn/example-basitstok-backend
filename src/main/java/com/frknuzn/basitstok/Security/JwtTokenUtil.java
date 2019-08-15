@@ -18,7 +18,7 @@ public class JwtTokenUtil {
 
     //Bir tokenımız 1Gün geçerliliğini koruyacak
     public static final long ACCESS_TOKEN_VALIDITY_SECONDS = 24 * 60 * 60 * 1000;
-    public static final String SIGNING_KEY = "frknuzn";// bu key ile tokenları şifreliyoruz
+    public static final String SIGNING_KEY = "****";// bu key ile tokenları şifreliyoruz
 
     public String getUsernameFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);
